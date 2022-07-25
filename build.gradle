@@ -1,6 +1,7 @@
 plugins {
 	id 'org.springframework.boot' version '2.2.4.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id "org.sonarqube" version "3.4.0.2513"
 	id 'java'
 	id 'war'
 }
@@ -30,4 +31,10 @@ dependencies {
 
 test {
 	useJUnitPlatform()
+}
+
+sonarqube {
+  properties {
+    property "sonar.projectKey", "java-gradle"
+  }
 }
